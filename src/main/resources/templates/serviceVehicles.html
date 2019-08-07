@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Service Scheduling Information</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+	<script src="/js/datepicker.min.js"></script>
+	<script src="/js/datepicker.en.js"></script>
+
+	<link th:href="@{/css/datepicker.min.css}" rel="stylesheet" />
+	<link th:href="@{http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css}" rel="stylesheet"/>
+	<link th:href="@{/css/site.css}" rel="stylesheet" />
+
+</head>
+<body>
+<h1>Service Scheduling Information</h1>
+<form action="#" th:action="@{editAndsave}" th:object="${vehicle}" method="post">
+<table>
+	
+	<tr>
+		<td>Car ID:</td>
+		<td><input type="text" th:field="*{vehicleId}" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td>Make:</td>
+		<td><input type="text" th:field="*{make}" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td>Model:</td>
+		<td><input type="text" th:field="*{model}" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td>Year:</td>
+		<td><input type="text" th:field="*{year}" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td>Car Type:</td>
+		<td><input type="text" th:field="*{carType}" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td>Odometer Reading:</td>
+		<td><input type="text" th:field="*{odometer}" readonly="readonly" /></td>
+	</tr>
+</table>
+	<hr>
+	<table>
+	<tr>
+		<td>Suggested service(s):</td>
+	    <td>
+			<ul th:each="task:${list}">
+				<li th:text="${task}"></li>
+			</ul>
+	    </td>
+	</tr>
+	<tr>
+		<td>Service Date:</td>
+		<td><input type='text' id="xx" th:field="*{serviceDate}" class='datepicker-here' data-timepicker="true" data-language='en' data-date-format="MM-dd-yyyy" data-time-format='hh:ii aa'/></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button type="submit">Confirm</button></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

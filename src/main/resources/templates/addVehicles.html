@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Vehicles</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+    <link th:href="@{http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css}" rel="stylesheet"/>
+    <link th:href="@{/css/site.css}" rel="stylesheet" />
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$( "input" ).each( function( index, element ){
+				if($(this).val() == ''){
+				this.focus();
+				return false;
+			  }
+			});
+		});
+
+	</script>
+
+</head>
+<body>
+
+<h1>Add Vehicles</h1>
+<form id="#addForm" action="#" th:action="@{addVehicles}" th:object="${vehicle}" method="post">
+	<table>
+	<tr>
+		<td>Make:</td>
+		<!--<td><input type="text" name="make"/></td>-->
+		<td><input type="text" th:field="*{make}" /></td>
+		<td th:if="${#fields.hasErrors('make')}" th:errors="*{make}">Make Error</td>
+	</tr>
+
+	<tr>
+		<td>Model:</td>
+		<!-- <td><form:input path="model"/></td> -->
+		<td><input type="text" th:field="*{model}"/></td>
+		<td th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Model Error</td>
+	</tr>
+	<tr>
+		<td>Year:</td>
+		<!-- <td><form:input path="city"/></td> -->
+		<td><input type="text" th:field="*{year}"/></td>
+		<td th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</td>
+	</tr>
+	<tr>
+		<td>Car Type:</td>
+		<td>
+			<select name="carType">
+				<option th:each="type : ${T(com.abc.auto.enums.CarType).values()}"
+						th:value="${type}"
+						th:text="${type}">
+				</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Odometer Reading:</td>
+		<td><input type="text" th:field="*{odometer}"/></td>
+		<td th:if="${#fields.hasErrors('odometer')}" th:errors="*{odometer}">Odometer Error</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button type="submit">Save</button></td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>

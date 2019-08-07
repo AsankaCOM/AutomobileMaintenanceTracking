@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Vehicle List</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+	<link th:href="@{http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css}" rel="stylesheet"/>
+	<link th:href="@{/css/site.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Vehicle List</h1>
+<table border="2" width="60%" cellpadding="2">
+	<tr><th>Id</th>
+		<th>Make</th>
+		<th>Model</th>
+		<th>Year</th>
+		<th>Car Type</th>
+		<th>Odometer</th>
+		<th>Service Date</th>
+		<th>Edit</th>
+		<th>Service</th>
+		<th>Delete</th></tr>
+	<tr th:each="vehicle:${list}">
+		<td th:text="${vehicle.vehicleId}"></td>
+		<td th:text="${vehicle.make}"></td>
+		<td th:text="${vehicle.model}"></td>
+		<td th:text="${vehicle.year}"></td>
+		<td th:text="${vehicle.carType}"></td>
+		<td th:text="${vehicle.odometer}"></td>
+		<td th:text="${vehicle.serviceDate}"></td>
+		<td><a href="#" th:href="@{|editVehicles/${vehicle.vehicleId}|}">Edit</a></td>
+		<td><a href="#" th:href="@{|serviceVehicles/${vehicle.vehicleId}|}">Service</a></td>
+		<td><a href="#" th:href="@{|deleteVehicles/${vehicle.vehicleId}|}">Delete</a></td>
+	</tr>
+	</c:forEach>
+</table>
+<br/>
+<a href="addVehicles">Add New Vehicle</a>
+</body>
+</html>
