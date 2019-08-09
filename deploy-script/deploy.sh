@@ -15,11 +15,11 @@ ssh $ssh_host sudo chmod 744 /tmp/auto_mobile_tracking_app/
 
 # Copy all files
 echo "Copying files to host..."
-scp $identity_file ./setup-app.sh ec2-user@$host:/tmp/auto_mobile_tracking_app/
-scp $identity_file ./AutoMobileTracking.service ec2-user@$host:/tmp/auto_mobile_tracking_app/
-scp $identity_file ./AutoMobileTracking.sh ec2-user@$host:/tmp/auto_mobile_tracking_app/
-#scp $identity_file ./prod_processor.conf ec2-user@$host:/tmp/auto_mobile_tracking_app/
-scp $identity_file ./target/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar ec2-user@$host:/tmp/auto_mobile_tracking_app/
+scp $identity_file ./deploy-script/setup-app.sh ec2-user@$host:/tmp/auto_mobile_tracking_app/
+scp $identity_file ./deploy-script/AutoMobileTracking.service ec2-user@$host:/tmp/auto_mobile_tracking_app/
+scp $identity_file ./deploy-script/AutoMobileTracking.sh ec2-user@$host:/tmp/auto_mobile_tracking_app/
+#scp $identity_file ./deploy-script/prod_processor.conf ec2-user@$host:/tmp/auto_mobile_tracking_app/
+scp $identity_file ./deploy-script/target/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar ec2-user@$host:/tmp/auto_mobile_tracking_app/
 
 # Run setup script
 echo "Running setup script..."
