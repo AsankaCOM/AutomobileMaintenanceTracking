@@ -1,0 +1,15 @@
+[Unit]
+Description = Manage AutoMobile Tracking System
+After network.target = AutoMobileTracking.service
+
+[Service]
+Type = forking
+Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+ExecStart = /usr/local/bin/AutoMobileTracking.sh start
+ExecStop = /usr/local/bin/AutoMobileTracking.sh stop
+ExecReload = /usr/local/bin/AutoMobileTracking.sh reload
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
