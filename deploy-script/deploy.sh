@@ -19,7 +19,7 @@ scp $identity_file ./deploy-script/setup-app.sh ec2-user@$host:/tmp/auto_mobile_
 scp $identity_file ./deploy-script/AutoMobileTracking.service ec2-user@$host:/tmp/auto_mobile_tracking_app/
 scp $identity_file ./deploy-script/AutoMobileTracking.sh ec2-user@$host:/tmp/auto_mobile_tracking_app/
 #scp $identity_file ./deploy-script/prod_processor.conf ec2-user@$host:/tmp/auto_mobile_tracking_app/
-scp $identity_file ./deploy-script/target/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar ec2-user@$host:/tmp/auto_mobile_tracking_app/
+scp $identity_file ./target/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar ec2-user@$host:/tmp/auto_mobile_tracking_app/
 
 # Run setup script
 echo "Running setup script..."
