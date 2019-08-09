@@ -10,7 +10,7 @@ set -x
 echo "Cleaning and creating temp directory..."
 ssh $ssh_host sudo rm -rf /tmp/auto_mobile_tracking_app/
 ssh $ssh_host sudo mkdir -p /tmp/auto_mobile_tracking_app/
-#ssh $ssh_host sudo chown jenkins /tmp/auto_mobile_tracking_app/
+ssh $ssh_host sudo chown ec2-user /tmp/auto_mobile_tracking_app/
 ssh $ssh_host sudo chmod 744 /tmp/auto_mobile_tracking_app/
 
 # Copy all files
