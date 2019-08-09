@@ -29,7 +29,7 @@ fi
 ## Back up existing CartaProcessor directory, deploy new version
 #rm -rf /tmp/auto_mobile_tracking_app/carta_processor_bak/*
 #mv /var/carta/carta_processor /tmp/auto_mobile_tracking_app/carta_processor_bak
-mv /tmp/auto_mobile_tracking_app/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT /var/ecaphi/spring-app/
+mv /tmp/auto_mobile_tracking_app/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar /var/ecaphi/spring-app/
 
 # Start AutoMobileTracking
 echo "Starting AutoMobileTracking service...."
