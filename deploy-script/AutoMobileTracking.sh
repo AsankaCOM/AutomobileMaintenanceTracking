@@ -10,7 +10,7 @@ case $1 in
     start)
         echo "Starting $SERVICE_NAME ..."
         if [ ! -f $PID_PATH_NAME ]; then
-            nohup java -jar /var/ecaphi/spring-app/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT >> /var/ecaphi/spring-app/auto_mobile_tracking.out 2>&1&
+            nohup java -jar /var/ecaphi/spring-app/AutomobileMaintenanceTracking-0.0.1-SNAPSHOT.jar >> /var/ecaphi/spring-app/auto_mobile_tracking.out 2>&1&
                         echo $! > $PID_PATH_NAME
             echo "$SERVICE_NAME started ..."
         else
