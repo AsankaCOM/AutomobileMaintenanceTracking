@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://wwww.thymeleaf.org">
 <head>
+	<style>
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		th, td {
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even){background-color: #f2f2f2}
+
+		th {
+		  background-color: #4CAF50;
+		  color: white;
+		}
+	</style>
+	
 	<meta charset="UTF-8">
 	<title>Vehicle List</title>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 
-	<link th:href="@{http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css}" rel="stylesheet"/>
-	<link th:href="@{/css/site.css}" rel="stylesheet" />
+	<!--<link th:href="@{http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css}" rel="stylesheet"/>-->
+	<!--<link th:href="@{/css/site.css}" rel="stylesheet" />-->
 </head>
 <body>
 <h1>Vehicle List</h1>
 <table border="2" width="60%" cellpadding="2">
-	<tr><th>Id</th>
+	<tr>	<th>Id</th>
 		<th>Make</th>
 		<th>Model</th>
 		<th>Year</th>
