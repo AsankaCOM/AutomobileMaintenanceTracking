@@ -61,7 +61,7 @@ public class AutomobileMaintenanceTrackingApplicationTests {
 		assertEquals(new Integer(2018), vehicles.get(0).getYear());
 		assertEquals("LX", vehicles.get(0).getModel());
 		assertEquals(new Long(12500), vehicles.get(0).getOdometer());
-		assertEquals("Mon Jul 30 17:30:00 [UTC] 2018", vehicles.get(0).getServiceDate().toString());
+		assertEquals("Mon Jul 30 17:30:00 UTC 2018", vehicles.get(0).getServiceDate().toString());
 		assertEquals(CarType.Electric, vehicles.get(0).getCarType());
 
 		assertEquals("Honda", vehicles.get(1).getMake());
