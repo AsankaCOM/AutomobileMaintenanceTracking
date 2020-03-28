@@ -12,6 +12,8 @@ Sample output ==>
 2018-08-03 09:09:22.555  INFO 94901 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2018-08-03 09:09:22.599  INFO 94901 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2018-08-03 09:09:22.607  INFO 94901 --- [           main] AutomobileMaintenanceTrackingApplication : Started AutomobileMaintenanceTrackingApplication in 2.843 seconds (JVM running for 3.441)
+....
+....
 
 Usage instructions
 ~~~~~~~~~~~~~~~~~~
