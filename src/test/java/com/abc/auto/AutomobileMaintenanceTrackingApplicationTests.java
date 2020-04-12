@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.abc.auto.enums.CarType;
@@ -31,7 +33,7 @@ public class AutomobileMaintenanceTrackingApplicationTests {
 		vehicle1.setOdometer(12500L);
 		vehicle1.setCarType(CarType.Electric);
 
-		Calendar cal = Calendar.getInstance();
+		Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"), Locale.CANADA);
 		cal.set(Calendar.DATE, 30);
 		cal.set(Calendar.MONTH, Calendar.JULY);
 		cal.set(Calendar.YEAR, 2018);
@@ -61,7 +63,11 @@ public class AutomobileMaintenanceTrackingApplicationTests {
 		assertEquals(new Integer(2018), vehicles.get(0).getYear());
 		assertEquals("LX", vehicles.get(0).getModel());
 		assertEquals(new Long(12500), vehicles.get(0).getOdometer());
-		assertEquals("Mon Jul 30 17:30:00 UTC 2018", vehicles.get(0).getServiceDate().toString());
+
+		DateFormat formatterUTC = new SimpleDateFormat("MM-dd-yyyy HH:mm z");
+		formatterUTC.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+		assertEquals("07-30-2018 17:30 UTC", formatterUTC.format(vehicles.get(0).getServiceDate()));
 		assertEquals(CarType.Electric, vehicles.get(0).getCarType());
 
 		assertEquals("Honda", vehicles.get(1).getMake());
